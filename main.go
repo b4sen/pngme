@@ -1,9 +1,9 @@
 package main
 
 import (
-	"os"
 	"errors"
 	"flag"
+	"os"
 
 	"github.com/b4sen/pngme/chunk"
 	"github.com/b4sen/pngme/chunk_type"
@@ -18,10 +18,9 @@ func main() {
 	flag.Parse()
 
 	ct := chunk_type.FromString(*typeName) // 3rd needs to be uppercase
-	if !ct.IsValid() || ct.IsCritical(){
+	if !ct.IsValid() || ct.IsCritical() {
 		panic(errors.New("Reserved bit is invalid!"))
 	}
-
 
 	data, err := os.ReadFile(*infile)
 	if err != nil {

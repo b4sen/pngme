@@ -7,7 +7,7 @@ import (
 	"pngme/chunk_type"
 )
 
-func TestNewChunk(t *testing.T){
+func TestNewChunk(t *testing.T) {
 	ct := chunk_type.FromString("ASDF")
 	c := Chunk{}
 	c.Type = &ct
@@ -16,8 +16,8 @@ func TestNewChunk(t *testing.T){
 	c.CRC = 3519565349
 
 	c2 := New(&ct, []byte("Hello World!"))
-	
-	if !reflect.DeepEqual(c, c2){
+
+	if !reflect.DeepEqual(c, c2) {
 		t.Errorf("Chunks are not equal!")
 	}
 }

@@ -1,17 +1,17 @@
 package chunk
 
 import (
-	"hash/crc32"
 	"encoding/binary"
+	"hash/crc32"
 
 	"github.com/b4sen/pngme/chunk_type"
 )
 
-type Chunk struct{
+type Chunk struct {
 	Length uint
-	Type *chunk_type.ChunkType
-	Data []byte
-	CRC uint32
+	Type   *chunk_type.ChunkType
+	Data   []byte
+	CRC    uint32
 }
 
 func (c *Chunk) calculateCRC() uint32 {

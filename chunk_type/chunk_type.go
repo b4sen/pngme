@@ -5,8 +5,8 @@ import (
 )
 
 type ChunkType struct {
-	Name []byte
-	Props     []int
+	Name  []byte
+	Props []int
 }
 
 func (ct *ChunkType) IsCritical() bool {
